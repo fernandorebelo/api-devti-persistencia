@@ -9,6 +9,8 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
+import io.swagger.annotations.ApiModelProperty;
+
 @Entity
 public class Cidade implements Serializable{
 
@@ -16,12 +18,15 @@ public class Cidade implements Serializable{
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@ApiModelProperty(value = "Chave primária da cidade")
 	private Integer id;
 	
 	@Column
+	@ApiModelProperty(value = "Nome da cidade")
 	private String nome;
 	
 	@Column
+	@ApiModelProperty(value = "Unidade federativa - UF")
 	private String uf;
 	
 	public Cidade() {
